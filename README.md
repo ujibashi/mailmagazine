@@ -17,7 +17,7 @@ $ cd ~
 $ python3 mailmagazine/run.py <フォルダ>
 ```
 
-### コードの更新方法
+### ソースコードの(run.py)更新方法
 
 ```
 $ cd ~
