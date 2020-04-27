@@ -33,6 +33,8 @@ for fn in files:
             sur_name_dict[address] = sur_name
             given_name_dict[address] = given_name
 
-for address in total_dict.keys():
-    mm_string = '・'.join(total_dict[address])
-    print(f'{sur_name_dict[address]},{given_name_dict[address]},{address},{mm_string}')
+output_file = directory + '/main.csv'
+with open(output_file, 'w') as out:
+    for address in total_dict.keys():
+        mm_string = '・'.join(total_dict[address])
+        print(f'{sur_name_dict[address]},{given_name_dict[address]},{address},{mm_string}', file=out)
