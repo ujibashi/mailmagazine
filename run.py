@@ -1,3 +1,4 @@
+# coding: UTF-8
 import csv
 import glob
 import sys
@@ -36,5 +37,5 @@ for fn in files:
 output_file = directory + '/main.csv'
 with open(output_file, 'w') as out:
     for address in total_dict.keys():
-        mm_string = '・'.join(total_dict[address])
+        mm_string = ''.join(total_dict[address])
         print(f'{sur_name_dict[address]},{given_name_dict[address]},{address},{mm_string}', file=out)
