@@ -14,7 +14,8 @@ directory = sys.argv[1]
 files = glob.glob(directory + '/*')
 
 total_dict = defaultdict(set)
-name_dict = defaultdict(str)
+sur_name_dict = defaultdict(str)
+given_name_dict = defaultdict(str)
 for fn in files:
     split_fn = re.split('/', fn)
     filename = split_fn[-1]
@@ -24,12 +25,14 @@ for fn in files:
     with open(fn) as fp:
         reader = csv.reader(fp)
         for row in reader:
-            name = row[0]
-            address = row[1]
+            sur_name = row[0]
+            given_name = row[1]
+            address = row[2]
 
             total_dict[address].add(mailmagazine_name)
-            name_dict[address] = name
+            sur_name_dict[address] = sur_name
+            given_name_dict[address] = given_name
 
 for address in total_dict.keys():
     mm_string = '・'.join(total_dict[address])
-    print(f'{name_dict[address]},{address},{mm_string}')
+    print(f'{sur_name_dict[address]},{given_name_dict[address]},{address},{mm_string}')
