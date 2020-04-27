@@ -12,5 +12,5 @@ $ git pull
 
 ```
 $ cd ~
-$ python3 mailmagazine <ディレクトリ>
+$ python3 mailmagazine/run.py <ディレクトリ>
 ```
